@@ -1,0 +1,31 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Nueva exposición de ilustración contemporánea",
+      "resumen": "Una muestra colectiva con ilustradores emergentes en Madrid.",
+      "categoria": "Exposiciones",
+      "fecha": "2026-01-15",
+      "imagen": "./imagenes/imagenes-noticias/ilust-contemporanea.jpg",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "titulo": "Nuevo curso de ilustración digital en Materia Creativa",
+      "resumen": "Aprende técnicas profesionales con Procreate y Photoshop.",
+      "categoria": "Cursos",
+      "fecha": "2026-01-10",
+      "imagen": "./imagenes/imagenes-noticias/ilust-digital.jpg",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "titulo": "Feria de arte independiente este fin de semana",
+      "resumen": "Ilustradores, prints y venta de obra original.",
+      "categoria": "Eventos",
+      "fecha": "2026-02-02",
+      "imagen": "./imagenes/imagenes-noticias/feria-arte.jpg",
+      "url": "#"
+    }
+  ]
+}
