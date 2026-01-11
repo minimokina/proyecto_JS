@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESUPUESTOS</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header> <!--CABECERA--> 
+        <h1>Materia Creativa</h1>
+        <nav>
+            
+            
+        <ul class="nav-links">
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="./portfolio.html">GALERÍA</a></li>
+                <li><a href="presupuesto.html" class="nav-links active">PRESUPUESTO</a></li>
+                <li><a href="./contacto.html">CONTACTO</a></li>
+            
+        </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contacto">
+            <h2>Formulario de contacto</h2>
+            <p>Si te gustaría impartir algunos de nuestros talleres o adquirir alguna de nuestras obra, no dudes en escribirnos. Estamos aquí para ayudarte.</p>
+                
+            <form class="formulario" onsubmit="return validarFormulario()">
+                    <fieldset class="separacion-datos">
+                    <div class="datos-formulario">
+                    <!--LABEL ES UNA ETIQUETA QUE SE USA PARA DARLE UN NOMBRE A UNA CAJA DE TEXTO-->
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" maxlength="15" pattern="[A-Za-z]{2,}" title="Solo letras y espacios, mínimo 2 caracteres" required>
+                    
+
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" maxlength="40" pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}" title="Solo letras y espacios, mínimo 2 caracteres" required>
+
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" maxlength="9" title="Introduce un número de 9 dígitos sin espacios" required>
+                
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email" pattern="[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+" title="Introduce un correo electrónico válido" required>
+
+                    
+                    
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" cols="30" rows="10" placeholder="Solicite información sobre nuestros talleres"></textarea>
+                    </div>
+                    </fieldset>
+                    
+                    <!--PRODUCTOS A ELEGIR-->
+                    <fieldset class="separacion-productos">
+                    <section id="producto-section">
+                        <h3>Productos</h3>
+
+                        <div class="productosAelegir">
+                            <label for="producto">Selecciona el tipo de ilustración</label>
+
+                            <select name="producto" id="producto" required>
+                                <option value="" disabled selected>-- Elige una opción --</option>
+                                <option value="40">Ilustración digital estándar (40 €)</option>
+                                <option value="60">Ilustración digital premium (60 €)</option>
+                                <option value="80">Ilustración impresa (80 €)</option>
+                                <option value="100">Retrato personalizado (100 €)</option>
+                            </select>
+                        </div>
+                    </section>
+                    
+                    <!-- PLAZO -->
+                    <div class="plazo-entrega">
+                        <label for="plazo">Plazo de entrega (días/meses)</label>
+                        <input type="number" id="plazo" name="plazo" min="1" max="24" required>
+                    </div>
+
+                    </fieldset>
+
+                    
+                    
+                    <!-- EXTRAS -->
+                    <fieldset class="separacion-extras">
+                    <h3 class="extras">Extras</h3>   
+                    
+                    <div class="opciones-extras">
+                        <label>
+                            Personalización completa (+25 €)
+                            <input type="checkbox" name="extras" value="25" class="extra" onchange="calcularPresupuesto()">
+                        </label>
+
+                        <label>
+                            Impresión en papel artístico premium (+15 €)
+                            <input type="checkbox" name="extras" value="15" class="extra" onchange="calcularPresupuesto()">
+                        </label>
+
+                        <label>
+                            Licencia de uso comercial (+30 €)
+                            <input type="checkbox" name="extras" value="30" class="extra" onchange="calcularPresupuesto()">
+                        </label>
+                    </div>
+
+                    
+                    <!-- PRESUPUESTO FINAL -->
+                    <label for="total">Presupuesto final (€)</label>
+                    <input type="text" id="total" readonly>
+
+                    </fieldset>
+
+                    <!-- POLÍTICA DE PRIVACIDAD -->
+                    <label>
+                        <input type="checkbox" id="politica" name="politica" required>
+                        Acepto la <a href="politica-de-privacidad.html" target="_blank">Política de privacidad</a>
+                      </label>
+                    <!--TYPE ES EL TIPO DE BOTÓN QUE QUEREMOS, EN ESTE CASO UN SUBMIT-->
+                    <!--NAME ES EL NOMBRE DEL BOTÓN, QUE SE ENVÍA AL SERVIDOR CUANDO SE ENVÍA EL FORMULARIO-->
+                    <div class="boton-enviar">
+                        <input type="submit" value="Enviar"> 
+                    </div>
+                </form>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+            <div class="redes-sociales">
+                <a href="https://www.instagram.com/"><img src="../imagenes/logos_redes_footer/logo-redes-insta.png" alt="instagram" height="100" width="100"></a>
+                <a href="https://www.facebook.com/"><img src="../imagenes/logos_redes_footer/logo-redes-facebook.png" alt="facebook" height="100" width="100"></a>
+                <a href="https://www.youtube.com/"><img src="../imagenes/logos_redes_footer/logo-redes-youtube.png" alt="youtube" height="100" width="100"></a>
+            </div>
+        <p>Calle Av. de la República Argentina, s/n , Sevilla, España</p>
+    </footer>
+
+    <script src="../js/presupuesto.js"></script>
+</body>
+</html>
